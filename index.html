@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tugas RPL — SICIKE-CIKE| [RIRIN GRACIA APRILIA MANIK]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+  --biru-tua: #001d3d;    
+  --biru-medium: #003566; 
+  --biru-cerah: #0077b6; 
+  --aksen-biru: #caf0f8; 
+  
+  --kuning: #ffc300;      
+  --putih-biru: #f0f8ff; 
+  --putih: #ffffff;
+  --teks: #000814;       
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--putih-biru);
+  color: var(--teks);
+  line-height: 1.7;
+}
+
+/* COVER */
+.cover {
+  background-image: linear-gradient(rgba(0, 29, 61, 0.7), rgba(0, 29, 61, 0.7)), url(asset/foto10.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  
+  color: #fff;
+  padding: 80px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.cover-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, .15);
+  border: 1px solid rgba(255, 255, 255, .3);
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: .75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.cover h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.cover h1 span {
+  color: var(--kuning);
+}
+
+.cover p {
+  font-size: 1.05rem;
+  opacity: .85;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.identity-card {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  background: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 16px;
+  padding: 20px 40px;
+  text-align: left;
+}
+
+.identity-card .label {
+  font-size: .7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: .6;
+}
+
+.identity-card .value {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* NAV */
+nav {
+  background: var(--biru-tua);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  overflow-x: auto;
+  gap: 4px;
+  padding: 0;
+}
+
+nav ul li a {
+  display: block;
+  padding: 14px 16px;
+  color: rgba(255, 255, 255, .7);
+  text-decoration: none;
+  font-size: .8rem;
+  letter-spacing: .5px;
+  white-space: nowrap;
+  transition: all .2s;
+  border-bottom: 3px solid transparent;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #fff;
+  border-bottom-color: var(--kuning);
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 0;
+  border-bottom: 1px solid #d0e1f9;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-label {
+  display: inline-block;
+  background: var(--biru-medium);
+  color: #fff;
+  font-size: .7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--biru-tua);
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+
+.section h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--biru-cerah);
+  margin: 28px 0 10px;
+  border-left: 4px solid var(--biru-medium);
+  padding-left: 12px;
+}
+
+/* CARDS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 53, 102, 0.08);
+  border: 1px solid #e1e9f0;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 53, 102, 0.15);
+}
+
+.card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--biru-tua);
+}
+
+/* TABLES */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: .88rem;
+  background: #fff;
+}
+
+th {
+  background: var(--biru-medium);
+  color: #fff;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #e1e9f0;
+}
+
+tr:nth-child(even) td {
+  background: var(--putih-biru);
+}
+
+/* FOOTER */
+footer {
+  background: var(--biru-tua);
+  color: rgba(255, 255, 255, .7);
+  text-align: center;
+  padding: 32px;
+  font-size: .85rem;
+  border-top: 2px solid var(--biru-cerah);
+}
+
+footer strong {
+  color: #fff;
+}
+
+/* CSS SOAL 5 - DIAGRAM BIRU PROFESIONAL */
+.label-biru-pro { background: #003566 !important; color: white; }
+
+.diagram-pro-wrapper {
+  margin-top: 30px;
+  background: #ffffff;
+  border: 1px solid #e1e8f0;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 53, 102, 0.05);
+}
+
+.diagram-scroll { overflow-x: auto; display: flex; justify-content: center; }
+.svg-activity { width: 100%; max-width: 500px; height: auto; }
+
+/* Warna Elemen Diagram */
+.box-proc { fill: #eef6ff; stroke: #007bff; stroke-width: 2; } /* Pengunjung */
+.box-proc-admin { fill: #fff5eb; stroke: #fd7e14; stroke-width: 2; } /* Admin */
+.box-proc-guide { fill: #ebfaf0; stroke: #20c997; stroke-width: 2; } /* Pemandu */
+.box-dec { fill: #fffdf0; stroke: #f1c40f; stroke-width: 2; }
+
+/* Teks */
+.txt-main { font-size: 12px; font-weight: bold; fill: #003566; }
+.txt-dec { font-size: 11px; font-weight: bold; fill: #856404; }
+.txt-end { font-size: 13px; font-weight: 800; fill: #003566; }
+
+/* Garis Alur */
+.line-blue { stroke: #007bff; stroke-width: 2; fill: none; }
+.line-red { stroke: #d90429; stroke-width: 2; fill: none; }
+.line-green { stroke: #2b9348; stroke-width: 2.5; fill: none; }
+.lbl-red { font-size: 11px; fill: #d90429; font-weight: bold; }
+.lbl-green { font-size: 11px; fill: #2b9348; font-weight: bold; }
+
+@media(max-width:600px) {
+  .cover { padding: 50px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>Studi Kasus:<br><span>Wisata Alam Sicike-Cike</span></h1>
+  <div class="identity-card">
+    
+  </div>
+</div>
+
+<nav>
+  <ul>
+    <li><a href="#soal1">Soal 1 · Potensi Lokal</a></li>
+    <li><a href="#soal2">Soal 2 · Analisis Kebutuhan</a></li>
+    <li><a href="#soal3">Soal 3 · Arsitektur</a></li>
+    <li><a href="#soal4">Soal 4 · Use Case</a></li>
+    <li><a href="#soal5">Soal 5 · Activity</a></li>
+    <li><a href="#soal6">Soal 6 · Class Diagram</a></li>
+    <li><a href="#soal7">Soal 7 · Prototipe</a></li>
+    <li><a href="#soal8">Soal 8 · Refleksi</a></li>
+  </ul>
+</nav>
+
+<section class="section" id="soal1">
+<div class="container">
+  <span class="section-label">Soal 1</span>
+  <h2>Identifikasi Potensi Lokal</h2>
+
+  <h3>Nama & Deskripsi Potensi</h3>
+  <p><strong>Wisata Alam Sicike-cike</strong> merupakan destinasi ekowisata unggulan di Sumatera Utara yang memadukan keasrian hutan hujan tropis dengan keunikan fenomena alam berupa tiga danau vulkanik yang saling terhubung. Kawasan ini menyimpan kekayaan biodiversitas yang luar biasa, menjadi habitat bagi flora langka seperti kantong semar dan anggrek hutan, serta beragam fauna endemik yang menjadikannya laboratorium alam ideal untuk kegiatan edukasi dan konservasi. Selain daya tarik ekologis, Sicike-cike memiliki nilai spiritual dan budaya yang mendalam bagi masyarakat suku Pakpak, di mana legenda lokal mengenai asal-usul danau memberikan dimensi narasi yang kuat bagi setiap pengunjung.</p>
+
+  <h3>Lokasi & Asal Daerah</h3>
+  <div class="info-box">
+    <strong>📍 Lokasi:</strong>Jl. Dolok Sanggul - Sidikalang, Desa Lae Hole, Kecamatan Parbuluan, Kabupaten Dairi, Sumatera Utara.
+  </div>
+
+  <h3>Daftar Harga Resmi Sicike-cike</h3>
+
+  <div class="harga-section">
+    <div class="harga-title">Tiket Masuk <span class="price-tag">Wisata Alam Sicike-cike</span></div>
+    <table>
+      <thead><tr><th>Keterangan</th><th>Harga Tiket</th></tr></thead>
+      <tbody>
+         <tr><td><strong>Masuk Kawasan</strong></td><td>10.000</td></tr>
+        <tr><td><strong>Sewa Guide</strong></td><td>50.000</td></tr>  
+      </tbody>
+    </table>
+  </div>
+
+   <h3>Alasan Mengapa Belum Dikenal Luas</h3>
+  <ul style="margin-left:20px;margin-top:10px;line-height:2;">
+    <li>Perjalanan menuju lokasi Wisata Alam Sicike-cike masih belum bagus.</li>
+    <li>Pengunjung harus berjalan sejauh 2-3 km melalui jalur hutan untuk sampai ke Danau.</li>
+    <li>Fasilitas pendukungnya masih terbatas seperti belum ada toilet dan tempat peristirahatan.</li>
+     <li>Masih belum begitu banyak orang yang mempromosikan Wisata Alam Sicike-cike.</li>
+  </ul>
+
+   <h3>Dampak Jika Dipromosikan Secara Digital</h3>
+  <ul style="margin-left:20px;margin-top:10px;line-height:2;">
+    <li>Adanya Kemungkinan Pertumbuhan UMKM di sekitaran Wisata Alam Sicike-cike.</li>
+    <li>Semakin dikenal khalayak ramai.</li>
+    <li>Terbukanya lapangan kerja masyarakat dikawasan Wisata Alam Sicike-cike.</li>
+    <li>Bertumbuhnya Otonomi daerah.</li>
+  </ul>
+
+  <h3>Terget Pengguna Utama</h3>
+  <ul style="margin-left:20px;margin-top:10px;line-height:2;">
+    <li>Pencinta alam & Adventurer (Orang yang menyukai suana alam dan ingin menguji adrenaline).</li>
+    <li>Fotografer & Konten Kreator (Pengguna yang butuh galeri visual untuk spot instgramable atau ingin melihat flora unik).</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<section class="section" id="soal2">
+<div class="container">
+  <span class="section-label">Soal 2</span>
+  <h2>Analisis Kebutuhan Sistem</h2>
+
+  <h3>Kebutuhan Fungsional</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Fitur</th>
+        <th>Deskripsi Spesifik</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>FR1</td>
+        <td>Info Tiket</td>
+        <td>Menampilkan harga tiket terbaru.</td>
+      </tr>
+      <tr>
+        <td>FR2</td>
+        <td>E-Booking</td>
+        <td>Memproses formulir pemesanan kunjungan dan jasa pemandu.</td>
+      </tr>
+      <tr>
+        <td>FR3</td>
+        <td>Galeri Media</td>
+        <td>Menampilkan Album Foto Flora,fauna,dan danau.</td>
+      </tr>
+      <tr>
+        <td>Fr4</td>
+        <td>Peta</td>
+        <td>Menyediakan peta interaktif dan petunjuk arah ke lokasi.</td>
+      </tr>  
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Kebutuhan Non-Fungsional</h3>
+  <div class="card-grid">
+    <div class="card">  
+      <h4>Ketersedian</h4>
+      <p>Sistem harus selalu dapat diakses oleh wisatawan kapan saja,terutama ketika mereka mengecek informasi saat dalam perjalanan menuju lokasi.</p>
+    </div>
+    <div class="card">
+      <h4>Kegunaan</h4>
+      <p>Website harus user-friendly atau mudah digunakan oleh orang awan yg tidak terlalu paham teknologi.</p>
+    </div>
+    <div class="card">
+      <h4>Keamanan</h4>
+      <p>Karna ada halaman booking yg meminta data diri pengunjung,keamanan data sangat penting.</p>
+    </div>
+    <div class="card">
+      <h4>Kecepatan</h4>
+      <p>Halaman Utama harus termuat dalam waktu kurang 3 detik pada koneksi internet standar.</p>
+    </div>
+  </div>
+
+  <h3>Peran Pengguna (User Role)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Hak Akses</th>
+        <th>Batasan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge badge-red">Admin</span></td>
+        <td>Login ke halaman backend menggunakan username dan password.
+CRUD Konten: Menambah (Create), Melihat (Read), Mengubah (Update), dan Menghapus (Delete) foto galeri, informasi tiket, atau artikel berita.
+Manajemen Booking: Melihat daftar wisatawan yang sudah mendaftar dan memvalidasi pesanan mereka</td>
+        <td>Hanya dapat diakses melalui login khusus admin.</td>
+      </tr>
+     <tr>
+        <td><span class="badge badge-red">Pengunjung</span></td>
+        <td>Melihat informasi harga tiket dan jam operasional.
+Menjelajahi galeri foto keindahan tiga danau dan flora/fauna.
+Melihat peta lokasi dan rute menuju TWA Sicike-cike.
+Melakukan pengisian formulir booking kunjungan atau pemesanan pemandu.</td>
+        <td>Tidak dapat mengubah konten sistem atau mengakses dashboard admin..</td>
+      </tr>  
+      <tr>
+        <td><span class="badge badge-green">Pemandu</span></td>
+        <td>Menerima notifikasi jika ada wisatawan yang memesan jasa pemandu melalui website.
+Melihat jadwal kunjungan wisatawan yang telah memilih mereka sebagai pendamping.</td>
+        <td>Sistem Penerimaan Pesanan: Pemandu hanya menerima data pesanan (seperti nama tamu dan tanggal) melalui pesan WhatsApp atau email yang diteruskan oleh sistem, bukan mengelola database di dalam website..</td>
+      </tr>
+Menerima notifikasi jika ada wisatawan yang memesan jasa pemandu melalui website.
+Melihat jadwal kunjungan wisatawan yang telah memilih mereka sebagai pendamping.
+    </tbody>
+  </table>
+</div>
+</section>
+<section class="section" id="soal3">
+<div class="container">
+  <span class="section-label">Soal 3</span>
+  <h2>Konsep & Arsitektur Perangkat Lunak</h2>
+
+  <h3>Nama Aplikasi & Filosofi</h3>
+  <div class="info-box">
+    <h4 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--biru-tua);">Taman Wisata Alam Sicike-cike</h4>
+    <p style="margin-top:8px;"><strong>Filosofi Penamaan:</strong> Nama <em>Wisata Alam Sicike-cike</em> diambil dari bahasa suku Pakpak yang merujuk pada sejenis rumput rawa atau tanaman air mirip pandan kecil yang tumbuh subur mendominasi kawasan tersebut. Secara filosofis, pengulangan nama ini melambangkan kelimpahan dan harmoni, di mana masyarakat lokal memilih menamai wilayah mereka berdasarkan identitas alam sebagai bentuk penghormatan. Bagi suku Pakpak, Sicike-cike bukan sekadar penanda geografis, melainkan simbol kesucian dan "ibu" dari kehidupan yang menjaga kelestarian air dan hutan demi kesejahteraan generasi mendatang. <em></em></p>
+  </div>
+
+  <h3>Visi & Misi</h3>
+  <div class="card-grid">
+    <div class="card">      
+      <h4>Visi</h4>
+      <p>Menjadi platform informasi digital terdepan dalam mengenalkan keindahan TWA Sicike-cike sebagai destinasi ekowisata berbasis kearifan lokal yang berkelanjutan di Sumatera Utara".</p>
+    </div>
+    <div class="card">
+      <h4>Misi</h4>
+      <p>Menyediakan akses informasi pariwisata yang akurat, mudah, dan transparan mengenai keindahan alam serta budaya di kawasan Sicike-cike.</p>
+    </div>
+  </div>
+
+  <h3>Modul / Fitur Utama</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Modul</th>
+        <th>Fungsi</th>
+        <th>Tujuan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Beranda</td>
+        <td>Halaman utama dengan ringkasan fasilitas</td>
+        <td>Membangun ketertarikan pengunjung dalam waktu singkat</td>
+      </tr>
+      <tr>
+        <td>Tiket & Harga</td>
+        <td>Menampilkan daftar harga tiket </td>
+        <td>Memastikan pengunjung menyiapkan biaya untuk kewisata ini</td>
+      </tr>
+      <tr>
+        <td>Galeri</td>
+        <td>Album foto yg dikelompokkan berdasarkan kategori singkat suanan hutan/danau</td>
+        <td>/Pengunjung dapat mengetaui apa aja isi di Wisata Alam Sicike-cike</td>
+      </tr>
+      <tr>
+        <td>Nasigavi/Lokasi</td>
+        <td>Memastikan pengunjung berada dititik kordinat lokasi</td>
+        <td>Memudahkan perjalanan fisik wisatawan ke lokasi Wisata Alam Sicike-cike</td>
+      </tr>   
+    </tbody>
+  </table>
+
+  <h3>Teknologi yang Direncanakan</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Komponen</th>
+        <th>Teknologi</th>
+        <th>Tujuan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bahasa Utama</td>
+        <td>HTML 5 & CSS3</td>
+        <td>Membangun stuktur infromasi pariwisata yg rapi</td>
+      </tr>
+      <tr>
+        <td>Tampilan</td>
+        <td>BOOTSTRAP 5 </td>
+        <td>Menjamin website nyaman dilihat dari hp wisatawan</td>
+      </tr>
+      <tr>
+        <td>Peta</td>
+        <td>GOOGLE Maps </td>
+        <td>Petunjuk Jalan Akurat</td>
+      </tr>
+      <tr>
+        <td>Interaksi</td>
+        <td>WhatsApp</td>
+        <td>Alat kumunikasi Instan antar tamu dan pemandu lokal</td>
+      </tr>   
+    </tbody>
+  </table>
+
+  <h3>Alur Kerja Sistem</h3>
+  <div class="info-box">
+    <ol style="margin-left:18px;line-height:2.2;">
+      <li>Pengunjung mengakses website <strong>wisataalamsicike-cike.id</strong>.</li>
+      <li>Pengunjung mengeksplorasi konten untuk melihat informasi harga tiket, detail fasilitas camping, galeri foto, dan lokasi peta..</li>
+      <li>Pengunjung mengisi form reservasi secara lengkap (Nama, No. WA, Tanggal Kunjungan) apabila ingin memesan tempat atau jasa pemandu.</li>
+      <li>Sistem mengirimkan data pesanan secara otomatis kepada Admin sebagai notifikasi (melalui API WhatsApp atau Email).</li>
+      <li>Admin menerima dan memvalidasi pesanan untuk kemudian melakukan konfirmasi balik kepada pengunjung mengenai ketersediaan tempat dan instruksi pembayaran.</li>
+      <li>Sistem menampilkan status pesanan atau memberikan bukti reservasi digital sederhana kepada pengunjung setelah dikonfirmasi oleh Admin..</li>
+    </ol>
+  </div>
+</div>
+</section>
+
+<section class="section" id="soal4">
+<div class="container">
+  <span class="section-label"> Soal 4</span>
+  <h2>Tahapan Pengembangan Use Case</h2>
+  <p>Silakan klik tombol tahapan di bawah ini untuk melihat detail identifikasi sistem <strong>Wisataalamsicike-cike.id</strong>:</p>
+
+  <style>
+    /* CSS Khusus untuk Tab Interaktif */
+    .tab-container { margin-top: 30px; border: 1px solid #d0e1f9; border-radius: 12px; overflow: hidden; background: #fff; }
+    .tab-buttons { display: flex; background: var(--biru-tua); overflow-x: auto; }
+    .tab-btn { 
+      padding: 15px 25px; border: none; background: none; color: #fff; cursor: pointer; 
+      font-weight: bold; font-size: 0.85rem; transition: 0.3s; white-space: nowrap; flex: 1;
+    }
+    .tab-btn:hover { background: var(--biru-medium); }
+    .tab-btn.active { background: var(--biru-cerah); color: #fff; border-bottom: 4px solid var(--kuning); }
+    
+    .tab-content { padding: 30px; display: none; animation: fadeIn 0.5s; }
+    .tab-content.active { display: block; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .step-title { color: var(--biru-tua); margin-bottom: 15px; border-bottom: 2px solid var(--aksen-biru); padding-bottom: 10px; }
+  </style>
+
+  <div class="tab-container">
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="openStep(event, 'step1')">STEP 1: DESKRIPSI</button>
+      <button class="tab-btn" onclick="openStep(event, 'step2')">STEP 2: AKTOR</button>
+      <button class="tab-btn" onclick="openStep(event, 'step3')">STEP 3: USE CASE</button>
+      <button class="tab-btn" onclick="openStep(event, 'step4')">STEP 4: HUBUNGAN</button>
+      <button class="tab-btn" onclick="openStep(event, 'step5')">STEP 5: DIAGRAM</button>
+    </div>
+
+    <div id="step1" class="tab-content active">
+      <h3 class="step-title">Langkah 1: Deskripsi Sistem</h3>
+      <div class="info-box">
+        <p>Sistem Informasi Wisata Alam <strong>Sicike-cike.id</strong> merupakan platform berbasis web yang dirancang sebagai pusat informasi digital terpadu untuk mengenalkan potensi ekowisata di Kabupaten Dairi. Sistem ini bertujuan untuk mendigitalisasi seluruh aspek informasi mulai dari profil sejarah, filosofi penamaan, hingga keanekaragaman hayati flora dan fauna endemik yang ada di kawasan konservasi tersebut. Melalui pendekatan yang berorientasi pada pengguna, website ini menyediakan fitur utama berupa informasi tiket masuk, galeri visual, dan pemetaan lokasi interaktif yang dapat diakses secara cepat tanpa melalui proses registrasi atau login yang rumit.</p>
+      </div>
+    </div>
+
+    <div id="step2" class="tab-content">
+      <h3 class="step-title">Langkah 2: Identifikasi Aktor</h3>
+      <div class="card-grid">
+        <div class="card">
+          <span class="badge badge-green">Aktor Utama</span>
+          <h4 style="margin-top:10px;">Pengunjung</h4>
+          <p>Pengguna yang mencari informasi wisata, melihat galeri, dan melakukan reservasi kunjungan secara anonim.</p>
+        </div>
+        <div class="card">
+          <span class="badge badge-green">Aktor Utama</span>
+          <h4 style="margin-top:10px;">Admin</h4>
+          <p>memiliki tugas untuk memperbarui konten website dan merespons setiap permintaan reservasi yang masuk.</p>
+        </div>
+        <div class="card">
+          <span class="badge badge-yellow">Sistem Eksternal</span>
+          <h4 style="margin-top:10px;">Pemandu</h4>
+          <p>Menerima data reservasi, melihat jadwal kunjungan, dan mengonfirmasi kesediaan jasa.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="step3" class="tab-content">
+      <h3 class="step-title">Langkah 3: Identifikasi Use Case</h3>
+      <div class="card-grid">
+        <div class="card">
+          <h4>UC Pelanggan</h4>
+          <ul style="font-size:0.85rem; padding-left:15px;">
+            <li>Melihat Profil & Filosofi</li>
+            <li>Melihat Gambar</li>
+            <li>Cek Harga Tiket</li>
+            <li>Cek Lokasi</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>UC Admin</h4>
+          <ul style="font-size:0.85rem; padding-left:15px;">
+            <li>Update Informasi Terbaru</li>
+            <li>Pengaturan Tarif</li>
+            <li>Validasi Data Kunjungan </li>
+            <li>Alokasi Pemandu Lokasl</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>UC Pemandu</h4>
+          <ul style="font-size:0.85rem; padding-left:15px;">
+            <li>Terima Detail Kunjungan </li>
+            <li>Pentuan Rute & Jalur</li>
+            <li>Kontrol Kedatangan Tamu </li>
+            <li>Pelaporan Tugas Selesai</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="step4" class="tab-content">
+      <h3 class="step-title">Langkah 4: Hubungan (Association)</h3>
+      <table>
+        <tr>
+          <th>Tipe Relasi</th>
+          <th>Keterangan</th>
+        </tr>
+        <tr>
+          <td><strong>Include</strong></td>
+          <td>Setiap melakukan "Reservasi", sistem wajib melakukan "Validasi Data Input" (untuk memastikan formulir terisi lengkap).</td>
+        </tr>
+        <tr>
+          <td><strong>Include</strong></td>
+          <td>Setiap melakukan "Update Konten", Admin wajib melakukan "Login Admin" (sebagai pengaman akses data).</td>
+        </tr>
+        <tr>
+          <td><strong>Extend</strong></td>
+          <td>Pengunjung bisa memilih "Jasa Pemandu" sebagai opsi tambahan saat melakukan reservasi kunjungan.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="step5" class="tab-content">
+      <h3 class="step-title">Langkah 5: Use Case Diagram</h3>
+      <div class="uml-wrap">    
+         <div class="gallery-grid">
+            <div class="gal-item"><img src="asset/foto13.png"></div>
+            
+        </div>
+
+  <script>
+    function openStep(evt, stepName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      tablinks = document.getElementsByClassName("tab-btn");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(stepName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+</div>
+
+<div class="container" style="margin-top: 40px;">
+  <h3 class="step-title-blue" style="color: #003566; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin-bottom: 20px;">Step 6: Tabel Deskripsi Use Case</h3>
+  <p>Detail fungsionalitas dari use case utama pada sistem <strong>wisataalamsicike-cike.id</strong>:</p>
+
+  <style>
+    .uc-table-wrapper-blue {
+      margin-top: 20px;
+      overflow-x: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 53, 102, 0.1);
+      border: 1px solid #e1f0ff;
+    }
+    .uc-table-blue {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: 0.9rem;
+    }
+    .uc-table-blue th {
+      background: #003566; /* Biru Tua */
+      color: #fff;
+      padding: 15px;
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .uc-table-blue td {
+      padding: 15px;
+      border-bottom: 1px solid #e1f0ff;
+      vertical-align: top;
+      color: #333;
+    }
+    .uc-table-blue tr:hover {
+      background-color: #f0f7ff; /* Hover Biru Sangat Muda */
+    }
+    .uc-name-blue {
+      font-weight: bold;
+      color: #0056b3; /* Biru Medium */
+    }
+    .uc-actor-blue {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #007bff; /* Biru Cerah */
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+  </style>
+
+  <div class="uc-table-wrapper-blue">
+    <table class="uc-table-blue">
+      <thead>
+        <tr>
+          <th width="25%">Nama Use Case</th>
+          <th width="15%">Aktor</th>
+          <th>Deskripsi Singkat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="uc-name-blue">Melihat Info & Galeri </td>
+          <td><span class="uc-actor-blue">Pengunjung</span></td>
+          <td>Pengunjung melihat rincian informasi dan foto kehindahan Taman Wisata Sicike-cike.</td>
+        </tr>
+        <tr>
+          <td class="uc-name-blue">Reservasi & Booking</td>
+          <td><span class="uc-actor-blue">Pengunjung</span></td>
+          <td>Proses pengisian formulir pemesana tiket masuk atau area camping pada tanggal tertentu.</td>
+        </tr>
+        <tr>
+          <td class="uc-name-blue">Pesan Jasa Pemandu</td>
+          <td><span class="uc-actor-blue">Pengunjung</span></td>
+          <td>Sistem secara otomatis memeriksa kelengkapan data formulir yang diinput oleh pengunjung saat reservasi.</td>
+        </tr>
+        <tr>
+          <td class="uc-name-blue">Validasi Data</td>
+          <td><span class="uc-actor-blue">Sistem/ Admin</span></td>
+          <td>Admin memperbarui informasi terkait harga, stok alat camping, galeri foto, dan deskripsi area wisata Taman Sicike-Cike.</td>
+        </tr>
+        <tr>
+          <td class="uc-name-blue">Login Admin</td>
+          <td><span class="uc-actor-blue">Admin</span></td>
+          <td>Admin masuk ke dalam sistem menggunakan username dan password untuk mengelola data website.</td>
+        </tr>
+        <tr>
+          <td class="uc-name-blue">Update Konten Wisata</td>
+          <td><span class="uc-actor-blue">Admin</span></td>
+          <td>Admin memperbarui informasi harga tiket,dan foto galeri terbaru.</td>
+        </tr>
+        <tr>
+          <td class="uc-name-blue">Vertifikasi Pesanan</td>
+          <td><span class="uc-actor-blue">Admin</span></td>
+          <td>Admin melakukan validasi terhadap data reservasi yang masuk sebelum diteruskan ke pihak pemandu.</td>
+        </tr>
+        <tr>
+          <td class="uc-name-blue">Terima Notifikasi</td>
+          <td><span class="uc-actor-blue">Pemandu</span></td>
+          <td>Pemandu menerima rincian data jadwal dan jumlah wisatawan untuk persiapan pendampingan di lapangan.</td>
+        </tr>
+        <tr>
+          <td class="uc-name-blue">Konfirmasi Layanan</td>
+          <td><span class="uc-actor-blue">Pemandu</span></td>
+          <td>Pemandu memberikan pernyataan kesediaan untuk mendampingi wisatawan sesuai jadwal yang diminta.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<section class="section" id="soal5">
+<div class="container">
+  <span class="section-label label-biru-pro">Soal 5</span>
+  <h2>Activity Diagram Terintegrasi</h2>
+  <p>Alur kerja sistem <strong>Wisataalamsicike-cike.id</strong> yang melibatkan Pengunjung, Admin, dan Pemandu Wisata:</p>
+  <div class="uml-wrap">    
+         <div class="gallery-grid">
+            <div class="gal-item"><img src="asset/foto14.png"></div>
+
+<section class="section" id="soal6">
+<div class="container">
+  <span class="section-label"> Soal 6</span>
+  <h2>Tahapan Pengembangan Use Case</h2>
+
+<section class="section" id="soal6" style="padding: 60px 0; background-color: #f8fbff;">
+  <div class="container">
+    <div class="section-header" style="margin-bottom: 30px;">
+      <h3 style="color: #003566; border-left: 5px solid #007bff; padding-left: 15px;">Class Diagram Sistem (Large View)</h3>
+      <p>Struktur data dengan kapasitas konten lebih luas untuk layanan <strong>wisataalamsicike-cike.id</strong>:</p>
+    </div>
+<div class="uml-wrap">    
+         <div class="gallery-grid">
+            <div class="gal-item"><img src="asset/foto15.png"></div>
+
+</section>
+
+<section class="section" id="soal7" style="padding: 80px 0; background-color: #f0f4f8;">
+  <div class="container">
+    <div class="section-header" style="margin-bottom: 40px; text-align: center;">
+      <span class="section-label" style="background: #003566; color: white; padding: 5px 15px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">Soal 7</span>
+      <h2 style="color: #003566; margin-top: 15px;">Akses Prototipe Sistem</h2>
+      <p style="color: #666; max-width: 600px; margin: 10px auto;">Klik tautan di bawah ini untuk meninjau hasil rancangan prototipe setiap modul wisataalamsicike-cike.id secara detail.</p>
+    </div>
+
+    <style>
+      .proto-link-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .proto-item {
+        background: #ffffff;
+        border: 1px solid #d0e1f9;
+        border-radius: 12px;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+        text-decoration: none !important;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+      }
+      .proto-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 20px rgba(0, 86, 179, 0.1);
+        border-color: #007bff;
+      }
+      .proto-icon-circle {
+        width: 50px;
+        height: 50px;
+        background: #eef6ff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+      .proto-name {
+        color: #003566;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+      .proto-info {
+        color: #777;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 20px;
+      }
+      .proto-btn {
+        background: #007bff;
+        color: white !important;
+        text-align: center;
+        padding: 10px;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 0.85rem;
+        transition: background 0.3s;
+      }
+      .proto-item:hover .proto-btn {
+        background: #0056b3;
+      }
+    </style>
+
+    <div class="proto-link-grid">
+    <a href="asset/index.html" class="proto-item" target="_blank">
+    <div class="proto-btn">Buka Dokumen Sistem</div>
+  </a>
+</div>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section" id="soal8">
+<div class="container">
+  <span class="section-label">Soal 8</span>
+  <h2>Refleksi & Rencana Pengembangan</h2>
+
+<section class="section" id="refleksi-rencana" style="padding: 60px 0; background-color: #ffffff; font-family: 'Segoe UI', sans-serif;">
+  <div class="container">
+    
+    <div style="background-color: #001d3d; color: #ffffff; border-radius: 20px; padding: 45px; box-shadow: 0 15px 35px rgba(0,29,61,0.15); line-height: 1.7; border-bottom: 8px solid #007bff;">
+      
+      <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+        
+        <div style="display: flex; gap: 40px; width: 100%; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 300px;">
+            <h3 style="color: #4cc9f0; border-left: 5px solid #007bff; padding-left: 18px; margin-bottom: 20px; font-size: 1.3rem;">
+              Mengapa Memilih Sicike-cike?
+            </h3>
+            <p style="text-align: justify; font-size: 0.95rem; color: #e0e1dd;">
+            Saya memilih TWA Sicike-cike sebagai objek proyek Rekayasa Perangkat Lunak ini karena lokasi tersebut merupakan potensi besar dari kampung halaman saya yang perlu dikembangkan melalui digitalisasi.disini ak merasa memiliki tanggung jawab untuk memperkenalkan kekayaan alam daerah sendiri, terutama keunikan flora, fauna, serta filosofi mendalam di balik nama Sicike-cike kepada masyarakat luas. Melalui pembangunan sistem informasi ini, saya ingin memberikan solusi praktis bagi wisatawan dalam mengakses informasi dan melakukan reservasi, sekaligus membantu pengelolaan pariwisata lokal agar lebih terorganisir dan profesional.  .
+            </p>
+          </div>
+
+          <div style="flex: 1; min-width: 300px;">
+            <h3 style="color: #4cc9f0; border-left: 5px solid #007bff; padding-left: 18px; margin-bottom: 20px; font-size: 1.3rem;">
+              Tantangan yang Diperkirakan
+            </h3>
+            <p style="text-align: justify; font-size: 0.95rem; color: #e0e1dd;">
+              Tantangan utama dalam proyek ini adalah memastikan sinkronisasi data reservasi secara real-time agar tidak terjadi bentrok kuota fasilitas atau jadwal pemandu saat banyak pengunjung memesan bersamaan. Selain itu, sistem harus dirancang sangat ringan agar tetap bisa diakses dengan lancar meskipun koneksi internet di area TWA Sicike-cike sering tidak stabil. Saya juga harus memikirkan cara agar koordinasi antara admin dan pemandu lapangan berjalan cepat, serta memastikan tampilan website cukup sederhana supaya mudah dioperasikan oleh pengelola setempat. Terakhir, tantangannya adalah mengumpulkan data flora dan fauna yang benar-benar akurat agar konten edukasi pada galeri website bisa dipertanggungjawabkan..
+            </p>
+          </div>
+        </div>
+
+        <div style="width: 100%; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+          <h3 style="color: #4cc9f0; border-left: 5px solid #007bff; padding-left: 18px; margin-bottom: 20px; font-size: 1.3rem;">
+            Siapa yang Direkomendasikan Mengelola?
+          </h3>
+          <p style="text-align: justify; font-size: 0.95rem; color: #e0e1dd;">
+            sistem ini juga sangat direkomendasikan untuk dikelola oleh Kelompok Sadar Wisata (Pokdarwis) atau organisasi pemuda setempat di daerah Sicike-cike. Dengan melibatkan pemuda daerah yang memiliki literasi digital, operasional harian seperti pengelolaan konten galeri flora-fauna dan koordinasi jadwal pemandu lokal bisa berjalan lebih cepat dan inovatif. Sinergi antara pemerintah daerah sebagai pengawas dan komunitas lokal sebagai operator lapangan akan memastikan sistem tetap hidup, data selalu terbarui, dan potensi wisata kampung halaman ini benar-benar memberikan dampak ekonomi langsung bagi warga sekitar.
+          </p>
+        </div>
+
+        <div style="width: 100%; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+          <h3 style="color: #4cc9f0; border-left: 5px solid #007bff; padding-left: 18px; margin-bottom: 20px; font-size: 1.3rem;">
+            Rencana Pengembangan Lanjutan
+          </h3>
+          <p style="text-align: justify; font-size: 0.95rem; color: #e0e1dd;">
+            Rencana pengembangan lanjutan untuk sistem ini akan difokuskan pada otomatisasi pembayaran melalui integrasi *payment gateway* agar proses transaksi menjadi lebih cepat tanpa verifikasi manual. Selain itu, sistem akan dikembangkan untuk mendukung fitur multi-bahasa guna menjangkau wisatawan mancanegara serta penambahan manajemen inventaris alat *camping* yang terhubung langsung dengan stok di lapangan. Untuk meningkatkan layanan, ke depannya akan dibangun dasbor khusus pemandu untuk mengatur jadwal pendampingan serta aplikasi berbasis *mobile* yang dilengkapi peta luring agar wisatawan tetap bisa mengakses informasi di area yang minim sinyal. Penguatan fitur galeri juga akan terus dilakukan dengan memperbarui dokumentasi flora dan fauna secara berkala agar website tetap relevan sebagai sarana edukasi digital.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="identity-card">
+    <div><span class="label">Nama Lengkap</span><br><span class="value">[Ririn Gracia Aprili Manik]</span></div>
+    <div><span class="label">NIM</span><br><span class="value">[253303611205]</span></div>
+    <div><span class="label">Kelas</span><br><span class="value">[Teknik informatika pagi A]</span></div>
+    <div><span class="label">Mata Kuliah</span><br><span class="value">Rekayasa Perangkat Lunak</span></div>
+  </div>
+
+</section>
+
+
+
+    
+<script>
+  // Active nav highlight
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 80) {
+      cur = s.id;
+    }
+  });
+  
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+});
+
+// Hover effect untuk kotak diagram agar interaktif
+document.querySelectorAll('.box-proc, .box-proc-admin, .box-proc-guide').forEach(box => {
+  box.style.transition = "0.3s";
+  box.addEventListener('mouseenter', () => box.style.filter = "brightness(0.9)");
+  box.addEventListener('mouseleave', () => box.style.filter = "brightness(1)");
+});
+
+</script>
+</body>
+</html>
